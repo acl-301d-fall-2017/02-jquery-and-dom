@@ -9,12 +9,12 @@ let articles = [];
 function Article (rawDataObj) {
     // TODO: Use the JS object that is passed in to complete this constructor function:
     // Save ALL the properties of `rawDataObj` into `this`
-    this.title = title;
-    this.category = category;
-    this.author = author;
-    this.authorUrl = authorUrl;
-    this.publishedOn = publishedOn;
-    this.body = body; 
+    this.title = rawDataObj.title;
+    this.category = rawDataObj.category;
+    this.author = rawDataObj.author;
+    this.authorUrl = rawDataObj.authorUrl;
+    this.publishedOn = rawDataObj.publishedOn;
+    this.body = rawDataObj.body; 
 
 }
 
@@ -46,12 +46,22 @@ Article.prototype.toHtml = function() {
     return $newArticle;
 };
 
+
+
 rawData.sort(function(a,b) {
     // REVIEW: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
 // TODO: Refactor these for loops using the .forEach() array method.
+rawData.forEach(function(item){
+    articles.push(new Article(item));
+});
+
+articles.forEach(function(item){
+    $('#articles').append(item.toHtml());
+});
+
 
 for(let i = 0; i < rawData.length; i++) {
     articles.push(new Article(rawData[i]));
@@ -60,3 +70,5 @@ for(let i = 0; i < rawData.length; i++) {
 for(let i = 0; i < articles.length; i++) {
     $('#articles').append(articles[i].toHtml());
 }
+
+
