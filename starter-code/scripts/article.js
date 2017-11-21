@@ -1,16 +1,23 @@
 'use strict';
 
-let articles = [];
+const articles = [];
+console.log(articles);
 
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
-// PUT YOUR RESPONSE HERE
+// Article is a contructor function creating an object containing author name, author url, article title, article body, and publication date. 'This' represents the value of a specific property at a given object instance. rawDataObj represents the property values of each object instance.
 
-function Article (rawDataObj) {
-  // TODO: Use the JS object that is passed in to complete this constructor function:
-  // Save ALL the properties of `rawDataObj` into `this`
+function Article(rawDataObj) {
+    // TODO: Use the JS object that is passed in to complete this constructor function:
+    this.title = rawDataObj.title;
+    this.category = rawDataObj.category;
+    this.author = rawDataObj.author;
+    this.authorUrl = rawDataObj.authorUrl;
+    this.publishedOn = rawDataObj.publishedOn;
+    this.body = rawDataObj.body;
+    // Save ALL the properties of `rawDataObj` into `this`
 }
 
-Article.prototype.toHtml = function() {
+Article.prototype.toHtml = function () {
   // COMMENT: What is the benefit of cloning the article? (see the jQuery docs)
   // PUT YOUR RESPONSE HERE
 
@@ -29,22 +36,22 @@ Article.prototype.toHtml = function() {
       5. publication date. */
 
   // REVIEW: Display the date as a relative number of 'days ago'
-  $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
+  $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000) + ' days ago');
   $newArticle.append('<hr>');
   return $newArticle;
 };
 
-rawData.sort(function(a,b) {
+rawData.sort(function (a, b) {
   // REVIEW: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
 // TODO: Refactor these for loops using the .forEach() array method.
 
-for(let i = 0; i < rawData.length; i++) {
+for (let i = 0; i < rawData.length; i++) {
   articles.push(new Article(rawData[i]));
 }
 
-for(let i = 0; i < articles.length; i++) {
+for (let i = 0; i < articles.length; i++) {
   $('#articles').append(articles[i].toHtml());
 }
