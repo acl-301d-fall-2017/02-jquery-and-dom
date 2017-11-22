@@ -46,3 +46,8 @@ address,
 time {
     padding: 0 0.5em 0 0.5em
 }
+
+/* new below */
+.template{
+    display: none;
+}
