@@ -6,18 +6,19 @@
 .icon-menu{
     position: absolute;
     right: 5px;
-    top: -130px;
+    top: -135px;
+    font-size: 2em;
 }
 
 .template {
     display: none;
 }
 
-nav ul {
+.main ul {
     display: none;
 }
 
-nav li {
+.main-nav ul li {
     border-bottom: 1px solid grey;
     padding: 5px 0px 5px 0px;
     color: grey;
@@ -31,19 +32,23 @@ nav li {
     width: 100%;
 }
 
+address,
+time {
+    padding: 0 0.5em 0 0.5em;
+}
 
 @media (min-width: 640px) {
     .icon-menu {
         visibility: hidden;
     }
 
-    nav ul {
+    .main-nav ul {
         display: flex;
         list-style-type: none;
         padding-left: 30px;
     }
 
-    nav ul li {
+    .main-nav ul li {
         padding-right: 30px;
         border-bottom: none;
     }
@@ -51,11 +56,5 @@ nav li {
     img {
         width: inherit;
     }
-}
-
-/* add padding to byline elements */
-address,
-time {
-    padding: 0 0.5em 0 0.5em;
 }
 

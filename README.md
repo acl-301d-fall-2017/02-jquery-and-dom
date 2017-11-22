@@ -1,98 +1,75 @@
-Lab 02: jQuery and the DOM
-===
 
+# 02-jQuery and the DOM
 
-## Content
-1. Submission Instructions
-1. Resources
-1. Configuration
-1. User Stories and Feature Tasks
-1. Documentation
-
---
-
-## Submission Instructions
-Follow the submission instructions from Lab 01.
-
-## Resources  
-[jQuery cheatsheet](https://oscarotero.com/jquery/)
-
-## Configuration
-_Your repository must include:_
-
-```
-02-jquery-and-the-dom
-├── .eslintrc.json
-├── .gitignore
-├── LICENSE
-├── README.md
-├── index.html
-├── scripts
-│   ├── article.js
-│   └── blogArticles.js
-├── styles
-│   ├── base.css
-│   ├── fonts
-│   │   ├── icomoon.eot
-│   │   ├── icomoon.svg
-│   │   ├── icomoon.ttf
-│   │   └── icomoon.woff
-│   ├── icons.css
-│   ├── layout.css
-│   └── modules.css
-└── vendor
-    └── styles
-        └── normalize.css
-```
-
-## User Stories and Feature Tasks
-
-- Continue styling the app using SMACSS practices. Take a few minutes for code review of your partner's CSS and decide how to incorporate it into your paired lab. You can choose one partner's CSS structure, or you can combine them as you see fit. Seek to optimize and organize your CSS as much as possible!
-
-*As a user, I want my site to display my blog articles in a clear, logical way so that I can find the most recent articles first and the blog is easy to read.*
-
-- Complete the `toHtml()` method, which will ultimately be used to render each article instance to the DOM.
-- The articles should be sorted by date.
-
-*As a developer, I want to make my code DRY and render articles from a separate data file so that my HTML file is not cluttered with lengthy and repetitive code.*
-
-- Complete the `Article()` constructor and create instances by assigning all of the properties of each data object to properties of `this`.
-
-*As a developer, I want to utilize the jQuery library's functionality so that I can efficiently access, traverse, and manipulate elements on the DOM.*
-
-- Add the necessary script tag to include jQuery in the app.
-- Utilize jQuery functionality to modify the display property of DOM elements.
-- Utilize jQuery functionality to traverse the DOM and complete the HTML template for the articles.
-
-*As a developer, I want to optimize iteration with JavaScript array methods so that my code is more condensed and maintainable.*
-
-- Refactor all `for` loops using the `.forEach()` method.
-
-
-## Documentation
-_Your README.md must include:_
-
-```md
-# Project Name
-
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
+**Author**: Grace Provost and Liz Petersen
+**Version**: 1.0.0
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
 
+This application is to demonstrate how jQuery interacts with the DOM. We used the .forEach method to access articles within an array and programatically add them to the DOM with jQuery.
+
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+1. Connect jQuery CDN to html page.
+2. Modify constructor function to accept object literal values using 'this'.
+3. Alter for loops into .forEach() methods.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+This application uses mobile-first responsive design principles. Libraries encorporated include normalize.css, icomoon.io, and jQuery CDN. Languages include HTML, CSS, and JavaScript.
 
 ## Change Log
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
+####commit cc34ef2aafc957ceff15ff38a2822992c58e7cc6
+Author: Lizabeth Petersen <lizpetersen928@gmail.com>
+Date:   Tue Nov 21 16:02:06 2017 -0800
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
+    changes name of function in article script
+
+####commit 38e6708a3439ffd63911f68555c5987567ea235a
+Author: Lizabeth Petersen <lizpetersen928@gmail.com>
+Date:   Tue Nov 21 15:50:11 2017 -0800
+
+    finished building functions with jquery that add articles to DOM organized by date
+
+####commit 5e810087f64d77c8f4abef4fc5a0ddebb5893b20
+commit cc34ef2aafc957ceff15ff38a2822992c58e7cc6
+Author: Lizabeth Petersen <lizpetersen928@gmail.com>
+Date:   Tue Nov 21 16:02:06 2017 -0800
+
+    changes name of function in article script
+
+####commit 38e6708a3439ffd63911f68555c5987567ea235a
+Author: Lizabeth Petersen <lizpetersen928@gmail.com>
+Date:   Tue Nov 21 15:50:11 2017 -0800
+
+    finished building functions with jquery that add articles to DOM organized by date
+
+####commit cc34ef2aafc957ceff15ff38a2822992c58e7cc6
+Author: Lizabeth Petersen <lizpetersen928@gmail.com>
+Date:   Tue Nov 21 16:02:06 2017 -0800
+
+    changes name of function in article script
+
+####commit 38e6708a3439ffd63911f68555c5987567ea235a
+Author: Lizabeth Petersen <lizpetersen928@gmail.com>
+Date:   Tue Nov 21 15:50:11 2017 -0800
+commit cc34ef2aafc957ceff15ff38a2822992c58e7cc6
+Author: Lizabeth Petersen <lizpetersen928@gmail.com>
+Date:   Tue Nov 21 16:02:06 2017 -0800
+
+    changes name of function in article script
+
+####commit 38e6708a3439ffd63911f68555c5987567ea235a
+Author: Lizabeth Petersen <lizpetersen928@gmail.com>
+Date:   Tue Nov 21 15:50:11 2017 -0800
+
+    finished building functions with jquery that add articles to DOM organized by date
+
+####commit 5e810087f64d77c8f4abef4fc5a0ddebb5893b20
+Author: G.Provost <grace.g.provost@gmail.com>
+Date:   Tue Nov 21 14:45:31 2017 -0800
+
+    go through TODO in index.html and article.js. Add stylesheets
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
-```
+jQuery Cheat Sheet: https://oscarotero.com/jquery/
+MDN: https://developer.mozilla.org

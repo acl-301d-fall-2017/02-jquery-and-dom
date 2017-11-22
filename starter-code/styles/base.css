@@ -6,7 +6,10 @@
 }
 
 img {
-    width: 100%;
+    width: 50%;
+    margin: 5px; 
+    border: 2px solid black;
+    border-radius: 3%;
 }
 
 a {
