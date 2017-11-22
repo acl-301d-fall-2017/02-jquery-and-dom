@@ -1,6 +1,6 @@
 'use strict';
 
-let articles = [];
+const articles = [];
 
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
 // PUT YOUR RESPONSE HERE  Constructor function called Article. Make multiple instances of Articles object. 'This' is used to set properties of each instance with its own arguments.
@@ -14,15 +14,14 @@ function Article (rawDataObj) {
     this.author = rawDataObj.author;
     this.authorUrl = rawDataObj.authorUrl;
     this.publishedOn = rawDataObj.publishedOn;
-    this.body = rawDataObj.body; 
-
+    this.body = rawDataObj.body;
 }
 
 Article.prototype.toHtml = function() {
     // COMMENT: What is the benefit of cloning the article? (see the jQuery docs)
     // PUT YOUR RESPONSE HERE  We don't have to retype each article's html structure.  Since they are the same for each when can use the clone to poplute each instance. Keeping code DRY.
 
-    let $newArticle = $('article.template').clone();
+    const $newArticle = $('article.template').clone();
     /* Done TODO: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
     $newArticle.removeClass('template');
     if (!this.publishedOn) $newArticle.addClass('draft');
@@ -41,7 +40,7 @@ Article.prototype.toHtml = function() {
       5. publication date. */
 
     // REVIEW: Display the date as a relative number of 'days ago'
-    $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
+    $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago'); //eslint-disable-line
     $newArticle.append('<hr>');
     return $newArticle;
 };
@@ -57,7 +56,7 @@ rawData.sort(function(a,b) {
 rawData.forEach(function(item){
     articles.push(new Article(item));
 });
-console.log(articles);
+
 articles.forEach(function($newArticle){
     $('#articles').append($newArticle.toHtml());
 });
