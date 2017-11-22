@@ -1,6 +1,6 @@
 'use strict';
 
-let articles = [];
+const articles = [];
 
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
 // 1. Article is a constructor function that compiles rawDataObj properties in as many objects as the constructor is called.
