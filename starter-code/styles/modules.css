@@ -19,7 +19,8 @@ ul li {
     float: left;
 }
 
-.byline address a, time {
+.byline address a, 
+time {
     padding: 0 5px;
 }
 

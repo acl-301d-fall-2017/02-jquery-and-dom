@@ -31,27 +31,15 @@ Article.prototype.toHtml = function() {
     $newArticle.find('address').text(this.author);
     $newArticle.find('a').text(this.authorURL);
     $newArticle.find('h1').text(this.title);
-    $newArticle.find('.article-body').text(this.body);
+    $newArticle.find('.article-body').html(this.body);
     $newArticle.find('time').text(this.publishedOn);
 
-    
-    
-    /* TODO: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
-    We need to fill in:
-      1. author name,
-      2. author url,
-      3. article title,
-      4. article body, and
-      5. publication date. */
-
-    // REVIEW: Display the date as a relative number of 'days ago'
     $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000) + ' days ago');
     $newArticle.append('<hr>');
     return $newArticle;
 };
 
 rawData.sort(function(a,b) {
-    // REVIEW: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
@@ -61,6 +49,6 @@ rawData.forEach(function(artObj) {
     articles.push(new Article(artObj));
 });
 
-for(let i = 0; i < articles.length; i++) {
-    $('#articles').append(articles[i].toHtml());
-}
+articles.forEach(function(article){
+    $('#articles').append(article.toHtml());
+});
