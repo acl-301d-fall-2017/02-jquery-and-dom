@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Lab 2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- // TODO: Incorporate yours or your pair's CSS -->
   <link rel="stylesheet" href="vendor/styles/normalize.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/icons.css">
@@ -38,8 +37,7 @@
           <div class="byline">
             By <address><a href="">Author Name</a></address>
             published <time pubdate datetime="2000-01-01">Publish Time</time>
-            <!-- COMMENT: What is the <time> HTML element used for? How does this connect to our JS files?  -->
-            <!-- PUT YOUR RESPONSE HERE -->
+            <!-- Time html tag allows the js engine to calculate the time elapsed since the given datetime.  -->
           </div>
         </header>
         <section class="article-body"></section>
@@ -49,7 +47,12 @@
   <footer>
     &copy; 2017 Code Fellows | Static Blog | Happy Ipsum!
   </footer>
-<!-- // TODO: Include any/all needed script tags -->
+<script
+src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+crossorigin="anonymous"></script>
+<script src='scripts/blogArticles.js'></script>
+<script src='scripts/article.js'></script>
 
 </body>
 </html>
