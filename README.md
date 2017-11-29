@@ -75,24 +75,33 @@ _Your README.md must include:_
 ```md
 # Project Name
 
-**Author**: Your Name Goes Here
+**Author**: Charlie Heiner and Carmen Perezchica
 **Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
+<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) --> 
+Created blog utilzing jQuery library for dry code. Application renders articles utilizing a constructor function and object literal data.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+A user would need to create html code, js code and css. 
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+We used the following: jQuery, normalize css, JS, .eslint, and live-server.
 
 ## Change Log
 <!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
+11-21-2017 1:30pm - Added normalize sheet and linked jQuery to HTML and added CSS
+11-21-2017 2:30pm - Created a clone article in jQuery to use instances data
+11-21-2017 3:30pm - Refractored the for loop using the .forEach method
+11-21-2017 3:40pm - Rendering articles with defect
+11-21-2017 4:00pm - Rendering all articles on page
+11-21-2017 4:10pm - Answered time element question
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
+
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+--> jQuery.com
 ```
